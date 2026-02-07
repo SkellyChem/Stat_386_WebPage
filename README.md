@@ -19,11 +19,11 @@ Hello! My name is Seth Kelly. I am a Senior in the Biochemistry major at Brigham
 - Presented research findings on ultra-low input phospho-DIA benchmarking using iterative synthetic phosphoisomers at SRC
 - Authored a standard operating procedure for electroporation, protein expression, and purification workflows.
 
-- ### Skills
+### Skills
 - **Laboratory Techniques:** Cell culture, electroporation, protein purification, TMT labelling, western blotting, restriction cloning
 - **Programming:** Proficient in Python (numpy, scipy, LinearRegression, pandas, matplotlib) and R
 - **Scientific Software:** Proficient with Perseus, SnapGene, ImageJ, and Graphpad Prism
 - **Data Analysis:** Experienced in mass spectrometry data processing
 
-- ### Get to Know Me
+### Get to Know Me
 Outside of professional and academic pursuits, I am an avid gamer, weightlifter and guitarist. I also really enjoy playing board games and card games with my friends and coworkers. A fun fact about me is that I love animals and grew up around cats, dogs, snakes and lizards.
