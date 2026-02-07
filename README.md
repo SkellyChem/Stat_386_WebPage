@@ -26,5 +26,3 @@ Hello! My name is Seth Kelly. I am a Senior in the Biochemistry major at Brigham
 
 - ## Get to Know Me
 Outside of professional and academic pursuits, I am an avid gamer, weightlifter and guitarist. I really enjoy playing board games and card games with my friends and coworkers. A fun fact about me is that I love animals and grew up around cats, dogs, snakes and lizards.
-
-- 
