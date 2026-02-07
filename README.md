@@ -1,6 +1,6 @@
 # **About Me**
 
-![Photo_of_Me](~/stat386_WebPage/myface.jpg)
+![Photo_of_Me](myface.jpg)
 
 ## Introduction
 Hello! My name is Seth Kelly. I am a Senior in the Biochemistry major at Brigham Young University with a minor in Statistics. I have a particular interest in mass spectrometry based proteomics. I aspire to use proteomic approaches to understand how protein signaling and post-translational modifications cause disease.
