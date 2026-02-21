@@ -1,4 +1,3 @@
----
 layout: page
 title: Decoding the Proteome
 permalink: /proteomics/
