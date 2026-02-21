@@ -1,8 +1,3 @@
-layout: page
-title: Decoding the Proteome
-permalink: /proteomics/
----
-
 # Decoding the Proteome: How Data Science is Revolutionizing Biology
 
 In data science, we often imagine our careers leading to fintech or ad-tech working to optimize company revenue or wrangle massive survey data. However, some of the most complex, high-stakes, and data-driven questions are actually found in biology, specifically in a subfield called proteomics.
@@ -20,10 +15,11 @@ A mass spectrometer acts as a high-precision scale used to identify proteins by 
 1.  **Breaking Them Down:** Raw proteins are too large to analyze in one piece (Often hundreds or thousands of amino acids long). Scientists use enzymes to break these long chains into manageable strings called peptides (typically 7–30 amino acids long).
 2.  **Fragmentation:** The MS isolates a single peptide and shatters it into even smaller fragments. Because proteins break in predictable ways these fragments are unique to that specific sequence.
 
-![Peptide fragmentation b-ions and y-ions diagram](Basic_MS_Overview.png)
 
 3.  **The Spectrum (The Raw Data):** The output is a collection of peaks corresponding to the different fragments.
 
+    ![Peptide fragmentation b-ions and y-ions diagram](Basic_MS_Overview.png)
+*Figure 1. I know how intimidating this figure may look, but the key parts of this are that first, proteins (the big colorful structures) are cut up. After that each peptide (a single color) is broken into smaller pieces and their mass is plotted on a mass spectrum. The x-axis shows the mass, the y shows how strong that fragment was present. Those are the most important things to know.* This figure is from [This Nature Article](https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00838#fig1)
 
 In the field, scientists call this a mass fingerprint. Just as a single fingerprint can identify a person, a single peptide fingerprint can identify a whole protein. The central problem is that these fingerprints are often noisy and unclear. This results in an inverse problem or in other words: Given a messy set of fragment peaks, what was the original string of amino acids?
 
@@ -48,6 +44,7 @@ To solve the "brittleness" of exact matching, researchers pivoted to Signal Proc
 The algorithm overlays your experimental data with a theoretical template. To prove a match is real and not just "background hum," it "slides" your data slightly to the left and right, purposely knocking the peaks out of alignment. If the alignment was a true match, the score plummets the moment you shift it, creating a sharp spike. If the score stays the same when shifted, the algorithm knows it was just looking at meaningless noise. The final XCorr score measures how much your signal "pops" out of the static.
 
 ![Cross-correlation function showing a sharp central spike](Cross_Correlation.png)
+*Figure 2. This is a simple schematic showing the basis of cross-correlation. In proteomics, the cross-correlating peaks would be like the ones seen in Figure 1, aligning with theoretical spectra with its own peaks. The theoretical spectrum with the best alignment to an experimental spectrum would determine the peptides identity.* This figure came from [LiquidInstruments.com](https://liquidinstruments.com/blog/cross-correlation-and-spectrum-analysis/)
 
 ##### The Delta Score
 Even a strong XCorr score doesn’t guarantee a match because of Type 1 error, so a layer of logic to measure uniqueness was added: the Delta Score ($\Delta Cn$). This calculates the relative gap between the #1 best guess and the #2 runner-up:
@@ -64,3 +61,6 @@ To solve this, researchers use the Target-Decoy Strategy. They create a "fake" d
 ### Wrapping up
 Of course, this is merely just scratching the surface in how deep these methods actually go. For more information check out the papers below. I used these to help me learn and understand the methods I discussed above. I hope this helped expand what you initially thought was possible within the field of data science.
 
+[An Introduction to Mass Spectrometry-Based Proteomics](https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00838#fig1)
+[What is cross-correlation, and how does it advance spectrum analysis? (LiquidInstruments.com)](https://liquidinstruments.com/blog/cross-correlation-and-spectrum-analysis/)
+[A survey of computational methods and error rate estimation procedures for peptide and protein identification in shotgun proteomics](https://pmc.ncbi.nlm.nih.gov/articles/PMC2956504/)
