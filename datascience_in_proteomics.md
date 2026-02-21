@@ -62,5 +62,7 @@ To solve this, researchers use the Target-Decoy Strategy. They create a "fake" d
 Of course, this is merely just scratching the surface in how deep these methods actually go. For more information check out the papers below. I used these to help me learn and understand the methods I discussed above. I hope this helped expand what you initially thought was possible within the field of data science.
 
 [An Introduction to Mass Spectrometry-Based Proteomics](https://pubs.acs.org/doi/10.1021/acs.jproteome.2c00838#fig1)
+
 [What is cross-correlation, and how does it advance spectrum analysis? (LiquidInstruments.com)](https://liquidinstruments.com/blog/cross-correlation-and-spectrum-analysis/)
+
 [A survey of computational methods and error rate estimation procedures for peptide and protein identification in shotgun proteomics](https://pmc.ncbi.nlm.nih.gov/articles/PMC2956504/)
