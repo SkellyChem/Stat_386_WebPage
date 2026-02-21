@@ -20,7 +20,7 @@ A mass spectrometer acts as a high-precision scale used to identify proteins by 
 1.  **Breaking Them Down:** Raw proteins are too large to analyze in one piece (Often hundreds or thousands of amino acids long). Scientists use enzymes to break these long chains into manageable strings called peptides (typically 7–30 amino acids long).
 2.  **Fragmentation:** The MS isolates a single peptide and shatters it into even smaller fragments. Because proteins break in predictable ways these fragments are unique to that specific sequence.
 
-![Peptide fragmentation b-ions and y-ions diagram](path/to/fragmentation-image.png)
+![Peptide fragmentation b-ions and y-ions diagram](Basic_MS_Overview.png)
 
 3.  **The Spectrum (The Raw Data):** The output is a collection of peaks corresponding to the different fragments.
 
@@ -47,7 +47,7 @@ To solve the "brittleness" of exact matching, researchers pivoted to Signal Proc
 
 The algorithm overlays your experimental data with a theoretical template. To prove a match is real and not just "background hum," it "slides" your data slightly to the left and right, purposely knocking the peaks out of alignment. If the alignment was a true match, the score plummets the moment you shift it, creating a sharp spike. If the score stays the same when shifted, the algorithm knows it was just looking at meaningless noise. The final XCorr score measures how much your signal "pops" out of the static.
 
-![Cross-correlation function showing a sharp central spike](path/to/xcorr-image.png)
+![Cross-correlation function showing a sharp central spike](Cross_Correlation.png)
 
 ##### The Delta Score
 Even a strong XCorr score doesn’t guarantee a match because of Type 1 error, so a layer of logic to measure uniqueness was added: the Delta Score ($\Delta Cn$). This calculates the relative gap between the #1 best guess and the #2 runner-up:
@@ -56,14 +56,10 @@ $$\Delta Cn = \frac{XCorr_1 - XCorr_2}{XCorr_1}$$
 
 If the gap is large, there is high confidence that the peptide identity is correct. Conversely, if the scores of the top two are almost identical, the fingerprint is too blurry to distinguish between two different candidates.
 
-![Comparison of the top-ranked peptide match to the second-best match](path/to/delta-score-image.png)
-
 ### The Final Guardrail: Target-Decoy Searching
 The unfortunate reality of XCorr is that if you search a noisy signal against a database of 100,000 proteins, you will always find a "best" match, even if the real protein isn't in your sample. In data science, this is the Multiple Testing Problem.
 
 To solve this, researchers use the Target-Decoy Strategy. They create a "fake" database by reversing all the protein sequences in the database (e.g., ALPHABET becomes TEBAHPLA). The XCorr process is then repeated against both the real (Target) and fake (Decoy) lists. Since a match to a "reversed" sequence is a guaranteed false positive, the number of decoy hits is used to calculate a False Discovery Rate (FDR) of peptides. The researchers then use this FDR to minimize the probability of a false hit in a sample to .01, giving them confidence that the proteins they identified were actually in their sample.
-
-![Target-Decoy search strategy showing target vs decoy hits](path/to/target-decoy-image.png)
 
 ### Wrapping up
 Of course, this is merely just scratching the surface in how deep these methods actually go. For more information check out the papers below. I used these to help me learn and understand the methods I discussed above. I hope this helped expand what you initially thought was possible within the field of data science.
